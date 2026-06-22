@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+envt/
+
+# IDE/editor
+.idea/
+.vscode/
+
+# Experiment outputs and model artifacts
+checkpoints/
+results/
+test_results/
+experiment_results/
+*.pt
+*.pth
+*.ckpt
+
+# Data and local generated packages
+data/
+包/
+
+# Logs and generated summaries
+*.log
+result_*.txt
+*_experiment_summary_*.txt

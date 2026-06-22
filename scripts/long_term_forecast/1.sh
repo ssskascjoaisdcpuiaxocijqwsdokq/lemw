@@ -1,0 +1,58 @@
+export CUDA_VISIBLE_DEVICES=0
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/ETT/ \
+  --data_path ETTm1.csv \
+  --model_id ETTm1_96_96 \
+  --model AdaWaveNet \
+  --data ETTm1 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 720 \
+  --e_layers 3 \
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --des 'Exp' \
+  --d_model 512\
+  --d_ff 512\
+  --itr 1 \
+  --lifting_levels 4\
+  --lifting_kernel_size 7\
+  --n_cluster 2\
+  --learning_rate 0.0005\
+  --batch_size 16
+
+python -u run.py \
+  --task_name long_term_forecast \
+  --is_training 1 \
+  --root_path ./data/ETT/ \
+  --data_path ETTh2.csv \
+  --model_id ETTh1_720_720_yecamf \
+  --model yecamf \
+  --data ETTh2 \
+  --features M \
+  --seq_len 96 \
+  --label_len 48 \
+  --pred_len 720 \
+  --e_layers 4\
+  --d_layers 1 \
+  --factor 3 \
+  --enc_in 7 \
+  --dec_in 7 \
+  --c_out 7 \
+  --d_model 512 \
+  --d_ff 512 \
+  --lifting_levels 4 \
+  --lifting_kernel_size 7 \
+  --n_clusters 4 \
+  --learning_rate 0.0005 \
+  --batch_size 16 \
+  --dropout 0.1 \
+  --patience 3 \
+  --train_epochs 50 \
