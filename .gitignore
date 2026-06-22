@@ -15,6 +15,7 @@ envt/
 # IDE/editor
 .idea/
 .vscode/
+.DS_Store
 
 # Experiment outputs and model artifacts
 checkpoints/
@@ -25,8 +26,7 @@ experiment_results/
 *.pth
 *.ckpt
 
-# Data and local generated packages
-data/
+# Local generated packages
 包/
 
 # Logs and generated summaries
